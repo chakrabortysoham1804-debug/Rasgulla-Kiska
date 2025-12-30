@@ -1,28 +1,35 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function MusicToggle() {
-  const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
 
-  const toggleMusic = () => {
+  const toggleMusic = async () => {
     if (!audioRef.current) return;
 
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      audioRef.current.play();
-      setIsPlaying(true);
+    try {
+      if (playing) {
+        audioRef.current.pause();
+      } else {
+        await audioRef.current.play();
+      }
+      setPlaying(!playing);
+    } catch (err) {
+      console.error("Audio play failed:", err);
     }
   };
 
   return (
     <>
       <audio ref={audioRef} loop>
-        <source src="/bg-music.mp3" type="audio/mpeg" />
+        <source
+          src={`${import.meta.env.BASE_URL}bg-music.mp3`}
+          type="audio/mpeg"
+        />
       </audio>
+
       <button className="music-btn" onClick={toggleMusic}>
-        {isPlaying ? "Music Off" : "Music On"}
+        {playing ? "🔊 Music On" : "🔇 Music Off"}
       </button>
     </>
   );
