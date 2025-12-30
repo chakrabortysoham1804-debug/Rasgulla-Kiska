@@ -8,7 +8,6 @@ export default function EventCards() {
         <p><strong>Date:</strong> 24th January, 2026</p>
         <p><strong>Time:</strong> 7:00 PM</p>
         <p><strong>Venue:</strong> Hall 2, Eastern Metropolitan Club</p>
-
         <a
           href="https://maps.google.com/?q=Eastern+Metropolitan+Club+Kolkata"
           target="_blank"
@@ -22,7 +21,6 @@ export default function EventCards() {
       <div className="event-card">
         <h3>Reception 🎉</h3>
         <p><strong>Venue:</strong> Hall 2, Eastern Metropolitan Club</p>
-
         <a
           href="https://maps.google.com/?q=Eastern+Metropolitan+Club+Kolkata"
           target="_blank"

@@ -1,23 +1,19 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef } from "react";
 
-export default function MusicToggle({ startMusic }) {
-  const audioRef = useRef(null);
+export default function MusicToggle() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
 
-  useEffect(() => {
-    if (startMusic && audioRef.current) {
+  const toggleMusic = () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
       audioRef.current.play();
       setIsPlaying(true);
     }
-  }, [startMusic]);
-
-  const toggleMusic = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
   };
 
   return (
@@ -25,9 +21,8 @@ export default function MusicToggle({ startMusic }) {
       <audio ref={audioRef} loop>
         <source src="/bg-music.mp3" type="audio/mpeg" />
       </audio>
-
-      <button onClick={toggleMusic} className="music-btn">
-        {isPlaying ? "🔊 Music On" : "🔇 Music Off"}
+      <button className="music-btn" onClick={toggleMusic}>
+        {isPlaying ? "Music Off" : "Music On"}
       </button>
     </>
   );
