@@ -62,8 +62,9 @@ export default function RSVP() {
         </select>
 
         <select name="attending" onChange={handleChange}>
-          <option value="Yes">Will Attend</option>
-          <option value="No">Cannot Attend</option>
+          <option value="Both">Yesss!!! Will attend both!</option>
+          <option value="Yes">Yes! But will only be there at the wedding :)</option>
+          <option value="No">Cannot Attend :((</option>
         </select>
 
         <button type="submit">Submit RSVP</button>
