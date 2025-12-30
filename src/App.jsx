@@ -24,7 +24,7 @@ export default function App() {
         Sanchari &amp; Soubhagya
         </h1>
         <p className="invite-subtitle">
-        invite you to their wedding</p>
+        <h3>invite you to their wedding</h3></p>
 
           <EventCards />
           <RSVP />
