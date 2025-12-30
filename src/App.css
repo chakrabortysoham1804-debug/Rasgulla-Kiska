@@ -32,7 +32,7 @@ html, body {
 .content {
   position: relative;
   z-index: 2;
-  color: white;
+  color: palevioletred;
   text-align: center;
   padding: 20px;
 }
@@ -50,7 +50,7 @@ html, body {
   position: relative;
   z-index: 2;
   height: 100vh;
-  color: white;
+  color: palevioletred;
   display: flex;
   flex-direction: column;
   justify-content: center;
