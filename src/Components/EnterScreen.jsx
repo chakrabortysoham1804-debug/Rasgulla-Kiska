@@ -4,8 +4,7 @@ export default function EnterScreen({ onEnter }) {
       <div className="overlay"></div>
 
       <div className="enter-content">
-        <h1>Tap to Enter Invitation</h1>
-        <p>Experience the celebration 🎉</p>
+        <p><h1>Tap to officially join the celebrations 💃🕺</h1></p>
 
         <button className="enter-btn pulse" onClick={onEnter}>
           Enter 💍

@@ -21,10 +21,10 @@ export default function App() {
       ) : (
         <div className="content">
         <h1 className="invite-title">
-        Sanchari &amp; Soubhagya
+        Come for the wedding, stay for the food 🍰
         </h1>
-        <p className="invite-subtitle">
-        <h3>invite you to their wedding</h3></p>
+        {/* <p className="invite-subtitle">
+        <h3>invite you to their wedding</h3></p> */}
 
           <EventCards />
           <RSVP />
